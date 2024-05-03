@@ -4,6 +4,8 @@
 
 <?= $this->section('content'); ?>
 
+<a role="button" class="btn btn-primary m-4" href="<?= url_to("Todos::new") ?>">New Item</a>
+
 <table class="table">
     <thead>
         <tr>

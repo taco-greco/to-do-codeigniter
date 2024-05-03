@@ -9,6 +9,7 @@ use App\Models\TodosModel;
 class Todos extends ResourceController
 {
     protected $model;
+    protected $helpers = ['form'];
     public function __construct()
     {
         $this->model = new TodosModel();
@@ -34,7 +35,8 @@ class Todos extends ResourceController
      */
     public function show($id = null)
     {
-        //
+        $data = $this->model->find($id);
+        return view("todos/show", ["data" => $data]);
     }
 
     /**
@@ -44,7 +46,7 @@ class Todos extends ResourceController
      */
     public function new()
     {
-        //
+        return view("todos/new");
     }
 
     /**
@@ -54,8 +56,12 @@ class Todos extends ResourceController
      */
     public function create()
     {
-        //
-    }
+        $this->model->save([
+            "title" => $this->request->getPost("title"),
+            "description" => $this->request->getPost("description"),
+            "status" => $this->request->getPost("status"),
+        ]);
+        return redirect()->to("/todos");}
 
     /**
      * Return the editable properties of a resource object.
