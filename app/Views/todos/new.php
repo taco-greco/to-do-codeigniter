@@ -4,7 +4,9 @@
 
 <?= $this->section('content'); ?>
 
-    <h1>New Todo</h1>
+<div class="card border-primary mb-4">
+    <h1 class="card-header">New Todo</h1>
+    <div class="card-body">
     <?= form_open("todos"); ?>
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
@@ -23,5 +25,7 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+    </div>
+</div>
 
     <?= $this->endSection(); ?>

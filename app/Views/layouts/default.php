@@ -10,7 +10,7 @@
 </head>
 <body>
     <header class="m-3">
-        <h1><?= $this->renderSection('H1') ?></h1>
+        <h1><a href="<?= url_to("Todos::index") ?>"><?= $this->renderSection('H1') ?></a></h1>
     </header>
     <main class="container">
        <?= $this->renderSection('content') ?>
