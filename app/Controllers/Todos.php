@@ -56,11 +56,7 @@ class Todos extends ResourceController
      */
     public function create()
     {
-        $this->model->save([
-            "title" => $this->request->getPost("title"),
-            "description" => $this->request->getPost("description"),
-            "status" => $this->request->getPost("status"),
-        ]);
+        $this->model->insert($this->request->getPost());
         return redirect()->to("/todos");}
 
     /**

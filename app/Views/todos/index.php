@@ -2,9 +2,14 @@
 
 <?= $this->section('title'); ?>TodoApp<?= $this->endSection(); ?>
 
+<h1><?= $this->section('H1'); ?>TodoApp<?= $this->endSection(); ?></h1>
+
+
 <?= $this->section('content'); ?>
 
-<a role="button" class="btn btn-primary m-4" href="<?= url_to("Todos::new") ?>">New Item</a>
+<a role="button" class="btn btn-primary m-4" hx-get="<?= url_to("Todos::new") ?>" hx-target="#form-container">New Item</a>
+
+<div id="form-container"></div>
 
 <table class="table">
     <thead>

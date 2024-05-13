@@ -1,6 +1,6 @@
 <?= $this->extend('layouts/default'); ?>
 
-<?= $this->section('title'); ?>TodoApp<?= $this->endSection(); ?>
+<?= $this->section('title'); ?>New ToDo<?= $this->endSection(); ?>
 
 <?= $this->section('content'); ?>
 
