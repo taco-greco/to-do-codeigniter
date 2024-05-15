@@ -18,4 +18,11 @@ class TodosModel extends Model
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
+
+    // Validation
+    protected $validationRules = [
+        'title' => 'required|min_length[3]|max_length[255]',
+        'description' => 'required',
+        'status' => 'required'
+    ];
 }

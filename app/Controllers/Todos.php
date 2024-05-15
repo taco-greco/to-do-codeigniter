@@ -56,8 +56,15 @@ class Todos extends ResourceController
      */
     public function create()
     {
-        $this->model->insert($this->request->getPost());
-        return redirect()->to("/todos");}
+        $data = $this->request->getPost();
+
+        if (!$this->model->validate($data)) {
+            return redirect()->back()->withInput()->with('errors', $this->model->errors());
+        }
+
+        $this->model->insert($data);
+        return redirect()->to("/todos");
+    }
 
     /**
      * Return the editable properties of a resource object.
@@ -68,7 +75,13 @@ class Todos extends ResourceController
      */
     public function edit($id = null)
     {
-        //
+        $data['todo'] = $this->model->find($id);
+
+        if (!$data['todo']) {
+            throw new \CodeIgniter\Exceptions\PageNotFoundException('Could not find the todo item with ID: ' . $id);
+        }
+
+        return view('todos/edit', $data);
     }
 
     /**
@@ -80,7 +93,24 @@ class Todos extends ResourceController
      */
     public function update($id = null)
     {
-        //
+        // Retrieve the posted data
+        $data = [
+            'title' => $this->request->getPost('title'),
+            'description' => $this->request->getPost('description'),
+            'status' => $this->request->getPost('status'),
+            'updated_at' => date('Y-m-d H:i:s')
+        ];
+
+        // Validate the posted data
+        if (!$this->model->validate($data)) {
+            return redirect()->back()->withInput()->with('errors', $this->model->errors());
+        }
+
+        // Update the todo item in the database
+        $this->model->update($id, $data);
+
+        // Redirect to the list of todos
+        return redirect()->to('/todos');
     }
 
     /**
