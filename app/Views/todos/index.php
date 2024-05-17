@@ -26,8 +26,8 @@
         <tbody class="table-group-divider">
             <?php foreach ($data as $item) : ?>
                 <tr class="<?= $item['status'] === 'completed' ? 'text-decoration-line-through' : ''; ?>">
-                    <td><?= $item['title']; ?></td>
-                    <td><?= $item['description']; ?></td>
+                    <td><?= esc($item['title']) ?></td>
+                    <td><?= esc($item['description']) ?></td>
                     <td><?= $item['status']; ?></td>
                     <td><?= $item['created_at']; ?></td>
                     <td><?= $item['updated_at']; ?></td>
