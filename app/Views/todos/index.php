@@ -14,6 +14,7 @@
     <table class="table table-sm table-dark table-hover">
         <thead>
             <tr>
+                <th>#</th>
                 <th>Title</th>
                 <th>Description</th>
                 <th>Created At</th>
@@ -24,8 +25,9 @@
             </tr>
         </thead>
         <tbody class="table-group-divider">
-            <?php foreach ($data as $item) : ?>
+            <?php $counter = 1; foreach ($data as $item) : ?>
                 <tr class="<?= $item['status'] === 'completed' ? 'text-decoration-line-through' : ''; ?>">
+                    <td><?= $counter++; ?></td>
                     <td><?= esc($item['title']) ?></td>
                     <td><?= esc($item['description']) ?></td>
                     <td><?= $item['status']; ?></td>
