@@ -18,6 +18,12 @@
         <?= session()->get('update') ?> 
     </div>
 <?php endif; ?>
+<?php if (session()->get('delete')) : ?>
+    <div class="alert alert-danger alert-dismissible">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <?= session()->get('delete') ?> 
+    </div>
+<?php endif; ?>
 
 <a role="button" class="btn btn-primary m-4" hx-get="<?= url_to("Todos::new") ?>" hx-target="#create-form">New Item</a>
 

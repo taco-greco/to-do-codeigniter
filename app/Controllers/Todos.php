@@ -126,6 +126,6 @@ class Todos extends ResourceController
         $this->model->delete($id);
 
         // Redirect to the list of todos
-        return redirect()->to('/todos');
+        return redirect()->to('/todos')->with('delete', 'Todo item deleted successfully');
     }
 }
