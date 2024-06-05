@@ -63,7 +63,7 @@ class Todos extends ResourceController
         }
 
         $this->model->insert($data);
-        return redirect()->to("/todos");
+        return redirect()->to("/todos")->with('success', 'Todo item created successfully');
     }
 
     /**

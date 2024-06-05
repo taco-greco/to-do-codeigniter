@@ -6,6 +6,14 @@
 
 <?= $this->section('content'); ?>
 
+<?php if (session()->get('success')) : ?>
+    <div class="alert alert-success alert-dismissible">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <?= session()->get('success') ?>
+        
+    </div>
+<?php endif; ?>
+
 <a role="button" class="btn btn-primary m-4" hx-get="<?= url_to("Todos::new") ?>" hx-target="#create-form">New Item</a>
 
 <div id="create-form"></div>
@@ -25,7 +33,8 @@
             </tr>
         </thead>
         <tbody class="table-group-divider">
-            <?php $counter = 1; foreach ($data as $item) : ?>
+            <?php $counter = 1;
+            foreach ($data as $item) : ?>
                 <tr class="<?= $item['status'] === 'completed' ? 'text-decoration-line-through' : ''; ?>">
                     <td><?= $counter++; ?></td>
                     <td><?= esc($item['title']) ?></td>
