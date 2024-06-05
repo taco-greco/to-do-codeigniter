@@ -9,19 +9,19 @@
 <?php if (session()->get('success')) : ?>
     <div class="alert alert-success alert-dismissible">
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        <?= session()->get('success') ?> 
+        <?= session()->get('success') ?>
     </div>
 <?php endif; ?>
 <?php if (session()->get('update')) : ?>
     <div class="alert alert-secondary alert-dismissible">
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        <?= session()->get('update') ?> 
+        <?= session()->get('update') ?>
     </div>
 <?php endif; ?>
 <?php if (session()->get('delete')) : ?>
     <div class="alert alert-danger alert-dismissible">
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        <?= session()->get('delete') ?> 
+        <?= session()->get('delete') ?>
     </div>
 <?php endif; ?>
 
