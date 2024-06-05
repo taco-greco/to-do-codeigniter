@@ -110,7 +110,7 @@ class Todos extends ResourceController
         $this->model->update($id, $data);
 
         // Redirect to the list of todos
-        return redirect()->to('/todos');
+        return redirect()->to('/todos')->with('update', 'Todo item updated successfully');
     }
 
     /**
