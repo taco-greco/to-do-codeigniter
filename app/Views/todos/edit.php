@@ -4,8 +4,8 @@
 
 <?= $this->section('content'); ?>
 
-
-<div class="card border-primary mb-4">
+<a class="m-3" href="/"><- Go Back</a>
+<div class="card border-primary m-4">
     <h1 class="card-header">Modify Todo</h1>
     <div class="card-body">
     <?= form_open("todos/".$todo['id']) ?>
