@@ -10,7 +10,7 @@
     <script src="https://unpkg.com/htmx.org@1.9.12"></script>
 </head>
 
-<body>
+<body hx-boost="true">
     <header class="m-3">
         <h1><a href="<?= url_to("Todos::index") ?>"><?= $this->renderSection('H1') ?></a></h1>
     </header>

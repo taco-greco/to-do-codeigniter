@@ -26,7 +26,7 @@
     </div>
 <?php endif; ?>
 
-<a role="button" class="btn btn-primary m-4" hx-boost="true" hx-get="<?= url_to("Todos::new") ?>" hx-target="#create-form" hx-trigger="click, keyup[ctrlKey && altKey && key == 'l'] from:body">New Item (Ctrl + Alt + L)</a>
+<a role="button" class="btn btn-primary m-4" hx-get="<?= url_to("Todos::new") ?>" hx-target="#create-form" hx-trigger="click, keyup[ctrlKey && altKey && key == 'l'] from:body">New Item (Ctrl + Alt + L)</a>
 
 <div id="create-form"></div>
 <div class="table-responsive">
@@ -53,13 +53,10 @@
                     <td><?= $item['status']; ?></td>
                     <td><?= $item['created_at']; ?></td>
                     <td><?= $item['updated_at']; ?></td>
-                    <td><a hx-boost="true" hx-get="<?= url_to("Todos::edit", $item['id']); ?>" hx-target="#modify-form" role="button" class="btn btn-secondary">Modify</a></td>
+                    <td><a hx-get="<?= url_to("Todos::edit", $item['id']); ?>" hx-target="#modify-form" role="button" class="btn btn-secondary">Modify</a></td>
                     <div id="modify-form"></div>
                     <td>
-                        <form action="<?= url_to("Todos::delete", $item['id']); ?>" method="POST">
-                            <input type="hidden" name="_method" value="DELETE" />
-                            <button type="submit" class="btn btn-danger" hx-boost="true">Delete</button>
-                        </form>
+                    <button hx-target="body" hx-delete="<?= url_to("Todos::delete", $item['id']); ?>" class="btn btn-danger">Delete</button>
                     </td>
 
                 </tr>
