@@ -56,7 +56,7 @@
                     <td><a hx-get="<?= url_to("Todos::edit", $item['id']); ?>" hx-target="#modify-form" role="button" class="btn btn-secondary">Modify</a></td>
                     <div id="modify-form"></div>
                     <td>
-                    <button hx-target="body" hx-delete="<?= url_to("Todos::delete", $item['id']); ?>" class="btn btn-danger">Delete</button>
+                    <button hx-target="body" hx-confirm="Are you sure you want to delete this item ?" hx-delete="<?= url_to("Todos::delete", $item['id']); ?>" class="btn btn-danger">Delete</button>
                     </td>
 
                 </tr>
