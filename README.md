@@ -4,7 +4,7 @@
 
 This application is a todo list built using CodeIgniter 4, leveraging the Restful API approach for backend operations, HTMX for dynamic frontend interactions without full page reloads, and Bootstrap for responsive design. It showcases how to create a modern, interactive web application with a PHP backend.
 
-![Screenshot of the application](/assets/TodoApp.png "Application Screenshot")
+![Screenshot of the application](public/assets/TodoApp.png "Application Screenshot")
 
 ## Getting Started
 
@@ -35,9 +35,9 @@ This will create the necessary tables for the todo list application.
 
 1. **Start the Server**: From the project's root directory, start the CodeIgniter server:
 
-`
+```
 php spark serve
-`
+```
 
 
 2. **Access the Application**: Open your web browser and navigate to `http://localhost:8080`. You should see the todo list application running.
