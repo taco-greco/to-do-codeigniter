@@ -4,6 +4,8 @@
 
 This application is a todo list built using CodeIgniter 4, leveraging the Restful API approach for backend operations, HTMX for dynamic frontend interactions without full page reloads, and Bootstrap for responsive design. It showcases how to create a modern, interactive web application with a PHP backend.
 
+![Screenshot of the application](/assets/TodoApp.png "Application Screenshot")
+
 ## Getting Started
 
 After cloning the repository from GitHub, follow these steps to get the application running:
