@@ -1,68 +1,64 @@
-# CodeIgniter 4 Application Starter
+# CodeIgniter 4 Todo List Application
 
-## What is CodeIgniter?
+## About the Application
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+This application is a todo list built using CodeIgniter 4, leveraging the Restful API approach for backend operations, HTMX for dynamic frontend interactions without full page reloads, and Bootstrap for responsive design. It showcases how to create a modern, interactive web application with a PHP backend.
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+![Screenshot of the application](public/assets/TodoApp.png "Application Screenshot")
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+## Getting Started
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+After cloning the repository from GitHub, follow these steps to get the application running:
 
-## Installation & updates
+### Installation
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+1. **Install Dependencies**: Navigate to the project's root directory and run:
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+```
+composer install
+```
 
-## Setup
+This command installs all required PHP dependencies.
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+2. **Environment Setup**: Copy the `env` file to `.env` and adjust the settings to match your environment. Make sure to set the `baseURL` and configure your database settings.
 
-## Important Change with index.php
+3. **Database Migration**: Run the following command to set up your database:
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+```
+php spark migrate
+```
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+This will create the necessary tables for the todo list application.
 
-**Please** read the user guide for a better explanation of how CI4 works!
 
-## Repository Management
+### Running the Application
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+1. **Start the Server**: From the project's root directory, start the CodeIgniter server:
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+```
+php spark serve
+```
 
-## Server Requirements
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+2. **Access the Application**: Open your web browser and navigate to `http://localhost:8080`. You should see the todo list application running.
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+## Features
 
-> [!WARNING]
-> The end of life date for PHP 7.4 was November 28, 2022.
-> The end of life date for PHP 8.0 was November 26, 2023.
-> If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> The end of life date for PHP 8.1 will be November 25, 2024.
+- **Todo List Management**: Create, read, update, and delete todo items.
+- **Dynamic Interactions**: Use HTMX to dynamically update the todo list without reloading the page.
+- **Responsive Design**: Bootstrap ensures the application is accessible and usable on various devices.
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+## Technologies Used
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+- **CodeIgniter 4**: A lightweight PHP framework providing a rich set of functionalities for building web applications.
+- **Restful API**: Backend API follows the RESTful principles, making it easy to perform CRUD operations.
+- **HTMX**: Enhances your HTML, allowing you to access AJAX, CSS Transitions, WebSockets, and more, directly with HTML.
+- **Bootstrap**: A front-end framework for developing responsive and mobile-first websites.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit pull requests or open issues to improve the application or suggest new features.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
