@@ -36,9 +36,9 @@
                 <th>#</th>
                 <th>Title</th>
                 <th>Description</th>
+                <th>Status</th>
                 <th>Created At</th>
                 <th>Modified At</th>
-                <th>Status</th>
                 <th>Modify</th>
                 <th>Delete</th>
             </tr>
