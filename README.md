@@ -22,7 +22,9 @@ This command installs all required PHP dependencies.
 
 3. **Database Migration**: Run the following command to set up your database:
 
+```
 php spark migrate
+```
 
 This will create the necessary tables for the todo list application.
 
@@ -31,7 +33,9 @@ This will create the necessary tables for the todo list application.
 
 1. **Start the Server**: From the project's root directory, start the CodeIgniter server:
 
+```
 php spark serve
+```
 
 
 2. **Access the Application**: Open your web browser and navigate to `http://localhost:8080`. You should see the todo list application running.
