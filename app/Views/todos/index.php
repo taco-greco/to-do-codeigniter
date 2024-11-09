@@ -26,7 +26,16 @@
     </div>
 <?php endif; ?>
 
-<a role="button" class="btn btn-primary m-4" hx-get="<?= url_to("Todos::new") ?>" hx-target="#create-form" hx-trigger="click, keyup[ctrlKey && altKey && key == 'l'] from:body">New Item (Ctrl + Alt + L)</a>
+<button role="button" class="btn btn-primary m-4 pe-4 position-relative"
+    hx-get="<?= url_to("Todos::new") ?>"
+    hx-trigger="click, keyup[ctrlKey && altKey && key == 'l'] from:body"
+    hx-target="#create-form"
+    hx-swap="outerHTML"
+    hx-indicator="#indicator">
+    <span class="htmx-indicator spinner-border spinner-border-sm" id="indicator" aria-hidden="true" role="status"></span>
+    <span class="visually-hidden">Loading...</span>
+    New Item (Ctrl + Alt + L)
+</button>
 
 <div id="create-form"></div>
 <div class="table-responsive">
@@ -56,7 +65,7 @@
                     <td><a hx-get="<?= url_to("Todos::edit", $item['id']); ?>" hx-target="#modify-form" role="button" class="btn btn-secondary">Modify</a></td>
                     <div id="modify-form"></div>
                     <td>
-                    <button hx-target="body" hx-confirm="Are you sure you want to delete this item ?" hx-delete="<?= url_to("Todos::delete", $item['id']); ?>" class="btn btn-danger">Delete</button>
+                        <button hx-target="body" hx-confirm="Are you sure you want to delete this item ?" hx-delete="<?= url_to("Todos::delete", $item['id']); ?>" class="btn btn-danger">Delete</button>
                     </td>
 
                 </tr>

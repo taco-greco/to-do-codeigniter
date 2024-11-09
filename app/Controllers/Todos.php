@@ -46,6 +46,7 @@ class Todos extends ResourceController
      */
     public function new()
     {
+        sleep(1);
         return view("todos/new");
     }
 
